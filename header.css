@@ -1,0 +1,335 @@
+/* header.css */
+
+.main-header {
+    /* --- 固定のための設定 --- */
+    position: fixed;
+    /* 画面に対して完全に固定する */
+    top: 0;
+    /* 画面の最上部に配置 */
+    left: 0;
+    /* 左端から */
+    right: 0;
+    /* 右端まで */
+    z-index: 9999;
+    /* 他の要素（画像など）の下に隠れないように一番上に配置 */
+
+    /* --- サイズとレイアウトの設定 --- */
+    width: 100%;
+    height: 70px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* 下に影をつけると「浮いている感」が出て見やすくなります */
+}
+
+/* 左側のグループ（画像 ＋ SNS） */
+.header-left {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    gap: 15px;
+    /* 要素同士の隙間 */
+}
+
+.header-logo {
+    height: 50px;
+    /* ヘッダーの高さに合わせて調整 */
+    width: auto;
+    border-radius: 4px;
+}
+
+.header-logo:hover {
+    opacity: 0.8;
+    /* マウスを乗せた時に少し薄くして「ボタン感」を出す */
+    transition: 0.3s;
+}
+
+/* インスタ・YouTubeアイコン */
+.social-icons a {
+    color: #333;
+    font-size: 24px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #e4405f;
+    /* ホバー時にインスタっぽく色付け */
+}
+
+.header-center {
+    flex: 1;
+    /* 左右の隙間を埋めるように広がる */
+    text-align: center;
+    /* 文字を中央寄せ */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    padding: 0 10px;
+    white-space: nowrap;
+    /* 改行させずに1行で表示 */
+    overflow: hidden;
+    /* はみ出た場合は隠す */
+    text-overflow: ellipsis;
+    /* 長すぎる場合は「...」にする */
+}
+
+.header-spacer {
+    height: 80px;
+    /* ヘッダーと全く同じ高さに設定 */
+}
+
+/* タイトルリンクの装飾をリセット */
+.header-title-link {
+    text-decoration: none;
+    /* 下線を消す */
+    color: inherit;
+    /* 親要素（header-center）の色を引き継ぐ */
+    display: block;
+    /* クリック範囲を広げる */
+}
+
+.header-title-link p {
+    margin: 0;
+    cursor: pointer !important;
+    /* ここでも指マークを強制 */
+}
+
+/* ホバーした時に少しだけ変化させる（任意：わかりやすくなります） */
+.header-title-link:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+/* 右側のメニューボタン（三本線） */
+.header-right {
+    margin-left: auto;
+}
+
+.menu-button {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #333;
+    /* 四角く囲う */
+    border-radius: 4px;
+    /* 少し角を丸く */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.menu-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* メニュー本体 */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    /* 最初は画面の外に隠す */
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    z-index: 10001;
+    transition: right 0.3s ease;
+    padding: 60px 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.side-menu,
+#sideMenu {
+    z-index: 10001 !important;
+    /* ^ボタン(9999)よりも高く設定して手前に出す */
+}
+
+/* メニューが開いた時 */
+.side-menu.active {
+    right: 0;
+}
+
+/* 背景を暗くする */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    display: none;
+}
+
+.menu-overlay,
+#menuOverlay {
+    z-index: 10000 !important;
+    /* ^ボタン(9999)よりも高く、メニュー本体よりは奥に設定 */
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/* メニュー内のリスト */
+.menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item {
+    border-bottom: 1px solid #eee;
+}
+
+.menu-item a,
+.menu-parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+    /* 変化をスムーズに */
+    border-left: 4px solid transparent;
+    /* ホバー用の線をあらかじめ透明で用意 */
+}
+
+.menu-item a:hover,
+.menu-parent:hover {
+    background-color: #f0f7ff;
+    /* 薄い青色に */
+    color: #004488;
+    /* 文字色を学連カラーに */
+    padding-left: 20px;
+    /* 少し右に動かす */
+    border-left: 4px solid #004488;
+    /* 左側に青い縦線を表示 */
+}
+
+/* 子メニュー（最初は隠す） */
+.menu-child {
+    list-style: none;
+    background: #f9f9f9;
+    display: none;
+    padding-left: 20px;
+}
+
+.menu-child li a {
+    font-weight: normal;
+    font-size: 0.9rem;
+    padding-left: 30px;
+    /* 親メニューより少し下げて階層を表現 */
+}
+
+.menu-child li a:hover {
+    background-color: #e6effa;
+    padding-left: 35px;
+    /* 子メニューも少し動かす */
+}
+
+/* 子メニューが開いた時 */
+.menu-item.active .menu-child {
+    display: block;
+}
+
+.menu-item.active .menu-parent i {
+    transform: rotate(180deg);
+}
+
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- 一番下にこれを追記 --- */
+.side-menu,
+.menu-overlay {
+    /* 確実に ^ボタン（9999）の手前に持ってきて、開いた時に覆い隠す */
+    z-index: 10005 !important;
+}
+
+/* ==========================================
+   ★画面幅が550px以下（スマホ）のときの設定★
+   ========================================== */
+/* ==========================================
+   ★画面幅が550px以下（スマホ）のときの設定★
+   ========================================== */
+@media (max-width: 550px) {
+    
+    /* 1. バー自体を細長くスリムにし、左右の余白を詰める */
+    .main-header {
+        height: 52px !important;    /* 70px から 52px にスリム化 */
+        padding: 0 10px !important; /* 左右の余白を狭くしてコンテンツ幅を確保 */
+    }
+
+    /* ヘッダーが細くなった分、メインコンテンツの開始位置（スペーサー）も詰める */
+    .header-spacer {
+        height: 60px !important;
+    }
+
+    /* 2. 左側のグループ（ロゴとSNSアイコン）を小さくしてスペースを作る */
+    .header-logo {
+        height: 35px !important; /* ロゴを小さく */
+    }
+    .social-icons a {
+        font-size: 18px !important;   /* SNSアイコンを小さく */
+        margin-right: 4px !important; /* アイコン同士の間隔を詰める */
+    }
+    .header-left {
+        gap: 6px !important; /* ロゴとSNSの隙間を狭く */
+    }
+
+    /* 3. 大会名を消さずに、中央に小さくジャストフィット配置 */
+    .header-center {
+        display: block !important;     /* display: none を解除して表示 */
+        font-size: 0.85rem !important; /* 横幅に収まるように文字サイズを調整 */
+        padding: 0 4px !important;     /* 左右のクッションを最小限に */
+        flex: 1 !important;            /* 左右の余白に負けないよう中央で最大化 */
+        text-align: center !important; /* 確実に中央配置 */
+    }
+
+    /* 4. 右側の三本線ボタンも一回りコンパクトに */
+    .menu-button {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 18px !important;
+    }
+
+    /* 5. メニューの幅を画面の「半分強」に狭める設定 */
+    .side-menu, 
+    #sideMenu {
+        width: 55% !important;         /* 画面幅の55%（約半分）にする */
+        
+        /* 【重要】PC用の「-300px」の設定を、スマホ用のパーセント設定で完全に上書き消去します */
+        right: -55% !important;        
+        transform: none !important;    /* 予期せぬズレをリセット */
+        
+        padding: 50px 10px !important; /* 中の余白も少しスリムに調整 */
+    }
+
+    /* メニューが開いた時は右端（0の位置）にピッタリ合わせる */
+    .side-menu.active,
+    #sideMenu.active {
+        right: 0 !important;
+    }
+
+    /* メニュー内の文字が窮屈になりすぎないよう調整 */
+    .menu-item a,
+    .menu-parent {
+        padding: 12px 10px !important;
+        font-size: 0.85rem !important; /* 文字を少しだけ小さく */
+    }
+}

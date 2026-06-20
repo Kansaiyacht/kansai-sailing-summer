@@ -1,0 +1,59 @@
+/* 画面全体の基本設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /* 背景画像の設定 */
+    background-image: url('Images/IMG_3654.JPG');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+}
+
+/* 中央のコンテンツエリア */
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* 白背景を少し透明にする */
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px; /* 角を丸くする */
+}
+
+/* 白地の本文ボックス（タイトル枠） */
+.main-card {
+    background-color: rgba(255, 255, 255, 0.9); /* 白地に少し透明感を出す */
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* 影をつけて浮いているように見せる */
+    border-radius: 15px; /* 角を丸くする */
+    text-align: center;
+}
+
+/* ボックス内の画像設定 */
+.content-image img {
+    width: 100%;       /* 枠の幅いっぱいに広げる */
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;    /* 上下に余白を作る */
+}
+
+/* 見出しの装飾 */
+h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 10px;
+}
+
+/* style.css の末尾に追記 */
+.subtitle {
+    font-size: 1.2rem;       /* メインより少し小さく */
+    color: #666;             /* 少し薄いグレーに */
+    margin-top: -10px;       /* メインタイトルとの距離を縮める */
+    margin-bottom: 20px;     /* 下の文章との間に余白を作る */
+    font-weight: normal;     /* 文字を細くしてメインと差をつける */
+    font-style: italic;      /* オシャレに斜体にする（お好みで） */
+}

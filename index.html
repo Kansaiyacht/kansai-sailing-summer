@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイホームページ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="container.css">
+    <link rel="stylesheet" href="top-button.css">
+    <link rel="stylesheet" href="background.css">
+</head>
+
+<body><header class="main-header">
+        <div class="header-left">
+            <a href="index.html">
+                <img src="Images/学連アイコン.jpg" alt="ロゴ" class="header-logo">
+            </a>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/kansaigakuren_sailing/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCZpQe6d9m9fIYeZAnf8CyMw" target="_blank"><i
+                        class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="header-center">
+            <a href="index.html" class="header-title-link">
+                <p>関西学生ヨット夏季選手権大会</p>
+            </a>
+        </div>
+
+        <div class="header-right">
+            <div class="menu-button" id="menuOpen"><i class="fa-solid fa-bars"></i></div>
+        </div>
+
+        <nav class="side-menu" id="sideMenu">
+            <div class="menu-close" id="menuClose"><i class="fa-solid fa-xmark"></i></div>
+            <ul class="menu-list">
+                <li class="menu-item has-child">
+                    <div class="menu-parent">大会情報 <i class="fa-solid fa-chevron-down"></i></div>
+                    <ul class="menu-child">
+                        <li><a href="https://www.racingrulesofsailing.org/documents/14965/event" target="_blank">公式掲示板</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item has-child">
+                    <div class="menu-parent">暫定・最終成績 <i class="fa-solid fa-chevron-down"></i></div>
+                    <ul class="menu-child">
+                        <li><a
+                                href="https://drive.google.com/drive/folders/16e6ki--_IDGvCnwLWh7i6Hh3a5VGvj5J?usp=drive_link" target="_blank">470級成績</a>
+                        </li>
+                        <li><a
+                                href="https://drive.google.com/drive/folders/1WiVQmfWPUW5CsDWIHmFVPQGVXfUXvS4w?usp=drive_link" target="_blank">スナイプ級成績</a>
+                        </li>
+                        <li><a
+                                href="https://drive.google.com/drive/folders/1fHKLbiAR3yyUyskWGZ51o-bJb69ptVUT?usp=drive_link"
+                                 target="_blank">総合成績</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-item has-child">
+                    <div class="menu-parent">乗員表 <i class="fa-solid fa-chevron-down"></i></div>
+                    <ul class="menu-child">
+                        <li><a href="https://drive.google.com/drive/folders/17NrQ6WF5lLIPj49slXTSh8AmhfcQeQft?usp=drive_link"
+                                target="_blank">470級乗員表</a></li>
+                        <li><a href="https://drive.google.com/drive/folders/1HVb6_BbvINd5aRvrDdnEb-Fxv8RiGMnQ?usp=drive_link"
+                                target="_blank">スナイプ級乗員表</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item has-child">
+                    <div class="menu-parent">撮影について <i class="fa-solid fa-chevron-down"></i></div>
+                    <ul class="menu-child">
+                        <li><a href="404.html" 
+                            target="_blank">プレス登録Form</a></li>
+                        <li><a href="404.html"
+                            target="_blank">撮影に関する遵守事項</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item"><a href="faq.html">FAQ</a></li>
+                <li class="menu-item"><a href="https://docs.google.com/forms/d/1P0HEBD9MF_vK9YwF3IHxPZnsd1iWoM3GQxOfMApzdLg/edit?usp=drive_link"
+                    target="_blank">お問い合わせ</a></li>
+            </ul>
+        </nav>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+    
+
+    <script>
+        const menuOpen = document.getElementById('menuOpen');
+        const menuClose = document.getElementById('menuClose');
+        const sideMenu = document.getElementById('sideMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const parents = document.querySelectorAll('.menu-parent');
+
+        // メニューを開く
+        if (menuOpen) { // エラー防止
+            menuOpen.addEventListener('click', () => {
+                sideMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+            });
+        }
+
+        // メニューを閉じる
+        [menuClose, menuOverlay].forEach(el => {
+            if (el) {
+                el.addEventListener('click', () => {
+                    sideMenu.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                });
+            }
+        });
+
+        // アコーディオンの開閉
+        parents.forEach(parent => {
+            parent.addEventListener('click', () => {
+                parent.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <div class="header-spacer"></div>
+
+    <div class="main-card">
+        <div class="image-area">
+            <img src="Images/アイコン1.1.JPG" alt="左上の画像">
+        </div>
+
+        <div class="text-area">
+            <div class="title-wrapper">
+                <h1>関西学生ヨット夏季選手権大会</h1>
+                <p class="subtitle">
+                    開催日程 ; 2026年7月4日・7月5日 <br>
+                    開催地 ; 新西宮ヨットハーバー
+                </p>
+            </div>
+            <p>エントリーは公式掲示板のNORを確認すること</p>
+        </div>
+    </div>
+
+    <div class="youtube-section-outer">
+        <div class="youtube-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/ydo839hDn3g" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="youtube-info-text">
+                <h3><i class="fa-brands fa-youtube"></i> LIVE 配信予定！</h3>
+                <p>関西学生ヨット連盟 公式YouTubeチャンネル</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <p class="intro-text">※最新の情報をこちらで確認してください。</p>
+
+        <p class="row-divider">大会情報</p>
+        <div class="box-row">
+            <a href="https://www.racingrulesofsailing.org/documents/14965/event" target="_blank"
+                class="info-box special-box">
+                <i class="fa-solid fa-bullhorn"></i>
+                <h3>公式掲示板</h3>
+                <p>大会公式掲示板はこちら<br>
+                    SI・NOR・STRなどのドキュメントはこちらを参照してください</p>
+            </a>
+        </div>
+
+        <p class="row-divider">暫定・最終成績</p>
+        <div class="box-row">
+            <a href="https://drive.google.com/drive/folders/16e6ki--_IDGvCnwLWh7i6Hh3a5VGvj5J?usp=drive_link"
+                target="_blank" class="info-box">
+                <i class="fa-solid fa-trophy"></i>
+                <h3>470級成績</h3>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1WiVQmfWPUW5CsDWIHmFVPQGVXfUXvS4w?usp=drive_link"
+                target="_blank" class="info-box">
+                <i class="fa-solid fa-trophy"></i>
+                <h3>スナイプ級成績</h3>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1fHKLbiAR3yyUyskWGZ51o-bJb69ptVUT?usp=drive_link"
+                target="_blank" class="info-box">
+                <i class="fa-solid fa-trophy"></i>
+                <h3>総合成績</h3>
+            </a>
+        </div>
+
+        <p class="row-divider">乗員表</p>
+        <div class="box-row">
+            <a href="https://drive.google.com/drive/folders/17NrQ6WF5lLIPj49slXTSh8AmhfcQeQft?usp=drive_link"
+                target="_blank" class="info-box">
+                <i class="fa-solid fa-users"></i>
+                <h3>470級乗員表</h3>
+                <p>乗員表の集計結果はこちらからご覧いただけます。</p>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1HVb6_BbvINd5aRvrDdnEb-Fxv8RiGMnQ?usp=drive_link"
+                target="_blank" class="info-box">
+                <i class="fa-solid fa-users"></i>
+                <h3>スナイプ級乗員表</h3>
+                <p>乗員届の集計結果はこちらからご覧いただけます。</p>
+            </a>
+        </div>
+
+        <p class="row-divider">撮影について</p>
+        <div class="box-row">
+            <a href="404.html" target="_blank" class="info-box">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <h3>プレス登録Form</h3>
+                <p>本大会の取材、撮影は事前登録制になります。<br>
+                    こちらのFormから登録を行ってください。<br>
+                    登録後、弊会よりご連絡差し上げます。</p>
+            </a>
+
+            <a href="404.html" class="info-box">
+                <i class="fa-solid fa-file-shield"></i>
+                <h3>撮影に関する遵守事項</h3>
+                <p>撮影ポリシーを展開しております。<br>
+                    リンク先の遵守事項を確認の上、必要であればプレス登録を実施してください。</p>
+            </a>
+
+        </div>
+
+        <p class="row-divider">質問について</p>
+        <section class="question-section">
+            <div class="question-container">
+                <div class="question-card">
+                    <i class="fa-solid fa-circle-question question-icon"></i>
+                    <p>大会に関するご不明点は、まずFAQをご確認ください。<br>解決しない場合は、専用フォームよりお問い合わせいただけます。</p>
+
+                    <div class="question-buttons">
+                        <a href="faq.html" class="btn-faq">
+                            <i class="fa-solid fa-book"></i> FAQを見る
+                        </a>
+                        <a href="https://docs.google.com/forms/d/1P0HEBD9MF_vK9YwF3IHxPZnsd1iWoM3GQxOfMApzdLg/edit?usp=drive_link" 
+                        target="_blank" class="btn-contact">
+                            <i class="fa-solid fa-paper-plane"></i> 質問はこちら
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <a href="#" class="back-to-top">
+        <span class="arrow">∧</span>
+    </a>
+
+</body>
+
+</html>

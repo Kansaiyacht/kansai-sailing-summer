@@ -1,0 +1,104 @@
+/* セクション全体：幅を100%使い、中央に寄せる */
+.youtube-highlight-center {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important; /* 子要素を水平中央へ */
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+/* 動画と情報を囲む箱 */
+.youtube-container {
+    width: 90% !important;   /* 画面の9割を使う */
+    max-width: 1000px !important; /* 最大幅をさらに大きく */
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+/* 動画のサイズ調整 */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9比率 */
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* YouTube強調セクション全体 */
+.youtube-highlight {
+    background-color: #f9f9f9;
+    border: 2px solid #ff0000;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.youtube-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+/* 動画のレスポンシブ対応 */
+.video-container {
+    flex: 1.5;
+    min-width: 300px;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* テキスト部分*/
+.youtube-text {
+    flex: 1;
+    min-width: 250px;
+} 
+
+.youtube-text h3 {
+    color: #ff0000;
+    font-size: 22px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.subscribe-area {
+    margin: 15px 0;
+} 
+
+.youtube-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #ff0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* スマホでは縦並びにする */
+@media (max-width: 768px) {
+    .youtube-content {
+        flex-direction: column;
+    }
+}

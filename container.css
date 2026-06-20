@@ -1,0 +1,442 @@
+/* ==================================================
+   【前半】PC版・基本の設定（デスクトップ環境向け）
+   ================================================== */
+
+/* 共通・基本レイアウト */
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* 左上の一文 */
+.intro-text {
+    text-align: left;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 20px;
+    border-left: 4px solid #333;
+    padding-left: 10px;
+}
+
+/* 列の間に入れる文章 */
+.row-divider {
+    text-align: left;
+    font-size: 1.4rem;
+    margin: 40px 0 15px;
+    font-weight: bold;
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* ボックスを並べる列の箱 */
+.box-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+/* 白いボックス単体のデザイン */
+.info-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+/* リンクになった info-box の見た目をリセット */
+a.info-box {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer !important;
+}
+
+/* ホバー時の反応を少し強調 */
+a.info-box:hover {
+    background-color: #f8fbff;
+    border-color: #004488;
+    transform: translateY(-5px);
+}
+
+/* 中の文字も指マークにする */
+a.info-box * {
+    cursor: pointer !important;
+}
+
+/* 1列目のボックス専用の設定：幅を半分にする */
+.special-box {
+    flex: 0 1 50% !important;
+    margin-right: auto;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    border-color: #333;
+}
+
+/* ボックス内の要素 */
+.info-box i {
+    font-size: 2rem;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.info-box h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.info-box p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* --- YouTubeセクションの基本設定 --- */
+.youtube-section-outer {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding: 20px 0 40px 0;
+    background-color: transparent;
+    clear: both;
+}
+
+.youtube-center-box {
+    width: 90% !important;
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+.youtube-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 80% !important;
+    max-width: 1000px !important;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center !important;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100% !important;
+    padding-top: 56.25% !important;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+}
+
+.youtube-info-text h3 {
+    color: #ff0000;
+    font-size: 24px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.youtube-info-text p {
+    font-size: 16px;
+    color: #333 !important;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.subscribe-button-wrap {
+    display: inline-block;
+    margin: 10px auto;
+}
+
+/* --- 質問セクションの基本設定（カラー共通） --- */
+.btn-faq {
+    background-color: #004488;
+    color: white;
+}
+
+.btn-faq:hover {
+    background-color: #003366;
+    transform: translateY(-2px);
+}
+
+.btn-contact {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.btn-contact:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+
+/* --------------------------------------------------
+   ★PC専用の個別調整スタイル（画面幅769px以上）★
+   -------------------------------------------------- */
+@media (min-width: 769px) {
+    /* PC用：質問カード全体の余白を広げる */
+    .question-card {
+        padding: 30px !important;
+        border-radius: 8px;
+    }
+
+    /* PC用：大きな青いアイコン */
+    .question-icon {
+        font-size: 40px !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* PC用：説明文の文字サイズ */
+    .question-card p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* PC用：ボタンをゆったり横並びにする */
+    .question-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 20px !important;
+        justify-content: center !important;
+        width: auto !important;
+    }
+
+    /* PC用：ボタンを1行（アイコン 文字）の横長に戻す設定 */
+    .question-buttons a {
+        display: flex !important;
+        flex-direction: row !important;    /* 1行に並べる */
+        align-items: center !important;
+        justify-content: center !important;
+        
+        padding: 12px 25px !important;    /* PC用の広いサイズ */
+        font-size: 16px !important;        /* 大きな文字 */
+        
+        width: auto !important;            
+        min-width: 160px !important;       /* ゆったりした最小幅 */
+        max-width: none !important;        /* スマホの制限を解除 */
+        min-height: 0 !important;          
+        
+        gap: 8px !important;               /* アイコンと文字の隙間 */
+        border-radius: 5px !important;     /* 元の角丸 */
+    }
+
+    /* PC用：ボタンの中のアイコンサイズ */
+    .question-buttons a i {
+        font-size: 1rem !important;
+    }
+}
+
+
+/* ==================================================
+   【後半】スマホ版の設定（モバイル・タブレット環境向け）
+   ================================================== */
+
+/* --------------------------------------------------
+   スマホ・タブレット共通（画面幅768px以下）
+   -------------------------------------------------- */
+@media (max-width: 768px) {
+    /* 大会看板のスマホ最適化 */
+    .main-card {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        padding: 4px 12px !important;
+        margin-top: 5px !important;
+        margin-bottom: 10px !important;
+        gap: 12px !important;
+        min-height: 0 !important;
+    }
+
+    .main-card .image-area {
+        flex: 0 0 25% !important;
+        max-width: 80px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .main-card .image-area img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        border-radius: 8px !important;
+    }
+
+    .main-card .text-area {
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        min-width: 0 !important;
+    }
+
+    .main-card h1 {
+        font-size: 1.1rem !important;
+        font-weight: bold !important;
+        color: #004488 !important;
+        margin: 0 0 4px 0 !important;
+        line-height: 1.3 !important;
+    }
+
+    .main-card .subtitle {
+        font-size: 0.7rem !important;
+        color: #555 !important;
+        margin: 0 0 4px 0 !important;
+        line-height: 1.4 !important;
+    }
+
+    .main-card .text-area>p {
+        font-size: 0.65rem !important;
+        color: #d32f2f !important;
+        margin: 0 !important;
+        font-weight: bold !important;
+    }
+
+    /* ナビゲーションボタン群の横一列化 */
+    .box-row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        gap: 2% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin-bottom: 15px !important;
+        padding: 0 !important;
+    }
+
+    .info-box {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        min-height: 75px !important;
+        padding: 8px 4px !important;
+        box-sizing: border-box !important;
+    }
+
+    .info-box i {
+        font-size: 1.1rem !important;
+        margin-bottom: 3px !important;
+    }
+
+    .info-box h3 {
+        font-size: 0.6rem !important;
+        line-height: 0.8 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        white-space: normal !important;
+        word-break: break-all !important;
+    }
+
+    .info-box p {
+        display: none !important;
+    }
+
+    /* 各セクションの横幅パーセント調整 */
+    .row-divider:nth-of-type(1)+.box-row .info-box {
+        flex: 0 0 49% !important;
+    }
+
+    .row-divider:nth-of-type(1)+.box-row .info-box p {
+        display: block !important;
+        font-size: 0.6rem !important;
+        margin: 3px 0 0 0 !important;
+    }
+
+    .row-divider:nth-of-type(2)+.box-row .info-box,
+    .row-divider:nth-of-type(3)+.box-row .info-box,
+    .row-divider:nth-of-type(4)+.box-row .info-box,
+    .box-row .info-box {
+        flex: 0 0 32% !important;
+    }
+}
+
+/* --------------------------------------------------
+   スマホ専用（画面幅480px以下）
+   -------------------------------------------------- */
+@media (max-width: 480px) {
+    /* 質問エリアの隙間 */
+    .question-section {
+        margin-bottom: 25px !important;
+    }
+
+    /* カードをスマホ用にスリム化 */
+    .question-card {
+        padding: 15px 12px !important;
+        border-radius: 8px !important;
+    }
+
+    /* アイコンを小さく */
+    .question-icon {
+        font-size: 26px !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* 説明文を小さく */
+    .question-card p {
+        font-size: 0.58rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* ボタン2つを横並びに */
+    .question-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 15px !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    /* ボタンの中身を縦並び（アイコン 改行 文字）にしてスマートにする */
+    .question-buttons a {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 12px 10px !important;
+        font-size: 0.8rem !important;
+
+        flex: 0 1 auto !important;
+        width: 40% !important;
+        max-width: 100px !important;
+        min-height: 60px !important;
+
+        gap: 6px !important;
+        border-radius: 8px !important;
+        box-sizing: border-box !important;
+    }
+
+    .question-buttons a i {
+        font-size: 1.4rem !important;
+        margin: 0 !important;
+    }
+}

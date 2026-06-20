@@ -1,0 +1,48 @@
+/* top-button.css */
+.back-to-top {
+    /* 画面の右下に固定 */
+    position: fixed !important;
+    bottom: 30px;
+    right: 30px;
+
+    /* 丸い形を作る */
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* 白背景（少し透かす） */
+    border: 2px solid #333;
+    /* 枠線 */
+    border-radius: 50%;
+    /* 正円にする */
+
+    /* 中のアイコンを真ん中に寄せる */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* リンクの見た目を整える */
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+
+    /* 影をつけて浮かせる */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    /* 【重要】重なり順をヘッダー(9999)の「一歩後ろ」に設定 */
+    z-index: 9990 !important;
+
+    /* 確実に指やマウスでクリックできるようにする */
+    pointer-events: auto !important;
+
+    /* クリックしやすくするためのアニメーション */
+    transition: all 0.3s ease;
+}
+
+/* マウスを乗せた時の動き */
+.back-to-top:hover {
+    background-color: #333;
+    color: #fff;
+    transform: translateY(-5px);
+    /* 少し上に浮く */
+}

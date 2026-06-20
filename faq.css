@@ -1,0 +1,130 @@
+/* ==================================================
+   【前半】PC版・基本の設定（デスクトップ環境向け）
+   ================================================== */
+
+/* FAQ全体の枠 */
+.faq-item {
+    background: #fff;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    display: block; /* 念のため追加 */
+}
+
+/* 質問部分の基本スタイル */
+.faq-question {
+    padding: 20px 50px 20px 20px; /* 右側に矢印用の余白(50px)を確保 */
+    font-weight: bold;
+    display: block; /* summaryはblockの方が安定します */
+    position: relative; /* 矢印を絶対位置で置くための基準 */
+    background-color: #fff;
+    cursor: pointer !important;
+    user-select: none;
+    transition: background-color 0.3s;
+}
+
+/* 中の要素がマウスイベントを遮らないようにする */
+.faq-question * {
+    pointer-events: none !important;
+    cursor: pointer !important;
+}
+
+/* 右側の矢印アイコン（擬似要素） */
+.faq-question::after {
+    content: '\f107'; /* FontAwesomeの下向き矢印 */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute; /* 位置を固定 */
+    right: 20px; /* 右端から20pxの位置 */
+    top: 50%;
+    transform: translateY(-50%); /* 垂直中央揃え */
+    transition: transform 0.3s, color 0.3s;
+    color: #ccc;
+    font-size: 1.2rem;
+}
+
+/* 回答部分 */
+.faq-answer {
+    padding: 0 20px 20px 20px;
+    color: #555;
+    line-height: 1.6;
+    border-top: 1px solid #eee;
+    background-color: #fafafa;
+}
+
+/* 開閉時の共通変化 */
+.faq-item[open] .faq-question::after {
+    color: #004488;
+}
+
+.faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+    color: #ff0000;
+}
+
+/* --- PC版専用の設定（画面幅769px以上） --- */
+@media (min-width: 769px) {
+    /* PC用の文字サイズ */
+    .faq-question {
+        font-size: 1rem;
+    }
+    
+    .faq-answer {
+        font-size: 0.95rem;
+    }
+
+    /* PC版のみホバー時の演出（横に少し動く）を有効化 */
+    .faq-question:hover {
+        background-color: #f0f7ff;
+        padding-left: 30px;
+        color: #004488;
+        cursor: pointer !important;
+    }
+
+    /* 開閉時：PC版の矢印回転（中央軸を維持） */
+    .faq-item[open] .faq-question::after {
+        transform: translateY(-50%) rotate(180deg) !important;
+    }
+}
+
+
+/* ==================================================
+   【後半】スマホ版の設定（モバイル環境向け）
+   ================================================== */
+
+/* 画面幅が480px以下のデバイス（スマートフォン縦画面）への適用 */
+@media (max-width: 480px) {
+    
+    /* 1. 質問部分のスマホ最適化 */
+    .faq-question {
+        padding: 16px 45px 16px 15px !important; /* 全体的に余白を少し引き締める */
+        font-size: 0.7rem !important;           /* スマホで見やすい文字サイズ */
+    }
+
+    /* スマホ版はタップ時の誤動作やガタつきを防ぐため、ホバーの横揺れ(`padding-left`)をリセット */
+    .faq-question:hover {
+        background-color: #f0f7ff !important;    /* 背景色だけ変えてタップを認識させる */
+        padding-left: 15px !important;           /* 横揺れを強制キャンセル */
+        color: #004488 !important;
+    }
+
+    /* 2. 矢印アイコンのスマホ微調整 */
+    .faq-question::after {
+        right: 15px !important;                  /* 画面端に合わせて位置を調整 */
+        font-size: 1rem !important;              /* アイコンを少し小さく */
+    }
+
+    /* 開閉時：スマホ版の矢印回転（中央軸を維持） */
+    .faq-item[open] .faq-question::after {
+        transform: translateY(-50%) rotate(180deg) !important;
+    }
+
+    /* 3. 回答部分のスマホ最適化 */
+    .faq-answer {
+        padding: 0 15px 16px 15px !important;    /* 左右の余白を質問部分と揃える */
+        font-size: 0.5rem !important;            /* テキストを少しスマートに */
+        line-height: 1.5 !important;             /* 行間をスマホ用に微調整 */
+    }
+}

@@ -1,32 +1,30 @@
-/* base.css */
-body {
-    margin: 0;
-    padding: 0;
-    padding-top: 80px; /* 重なりを防ぐため、ヘッダー(70px)より少し多めに空ける */
-    box-sizing: border-box; /* 余白を幅や高さに含める */
-
-    background-image: url('Images/470Photo.JPEG'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 100vh;
-}
+/* ==========================================
+   共通基本スタイル (base.css)
+   ========================================== */
 
 html {
     scroll-behavior: smooth;
-}
-
-
-
-/* 全ての要素に対して、パディングを幅に含める設定 */
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-/* 画面の横揺れ・はみ出しを根本から防ぐ */
-html, body {
-    overflow-x: hidden;
     width: 100%;
+    overflow-x: hidden;
+}
+
+body {
     margin: 0;
     padding: 0;
+    padding-top: 80px; /* ヘッダーとの重なりを防ぐ余白 */
+    width: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+
+    /* 背景画像の設定 */
+    background-image: url('Images/470photo.JPEG'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* 全ての要素でボックスサイズを直感的に計算する設定 */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
